@@ -1,5 +1,6 @@
 # Track to Buy - Landing Page
 
+This is our announcement landing page for users subscribe to our notification tool about the progress and development of this product coming live on August, 2026.
 
 ## Project info
 
