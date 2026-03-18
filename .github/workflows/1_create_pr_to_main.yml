@@ -96,5 +96,5 @@ jobs:
       - name: Create PR to Develop
         run: |         
           if [ "$PR_EXISTS" == "false" ]; then
-            gh pr create --base main --title "PR from $BRANCH_NAME to main" --body "$COMMITS --assignee "${{ github.actor }}""  
+            gh pr create --base main --title "PR from $BRANCH_NAME to main" --body "$COMMITS" --assignee "${{ github.actor }}"  
           fi
