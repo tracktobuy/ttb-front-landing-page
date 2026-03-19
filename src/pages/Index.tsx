@@ -48,7 +48,7 @@ const Index = () => {
         {/* Headline */}
         <div>
           <p className="text-primary font-medium tracking-widest uppercase text-sm mb-3">
-            Coming Soon
+            Coming Soon george george george george
           </p>
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-foreground leading-tight">
             Your wishlist,
