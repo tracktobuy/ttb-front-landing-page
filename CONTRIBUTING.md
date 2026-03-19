@@ -37,4 +37,7 @@ npm run dev
 ```
 
 ## Deployment
-_Pending pipeline_
+1. Create a Pull Request to ```main``` branch.
+2. Wait for the approval
+3. After getting the approval, you may merge to ```main```
+4. The deployment pipeline will handle the code upload to S3 Bucket and CDN invalidation
