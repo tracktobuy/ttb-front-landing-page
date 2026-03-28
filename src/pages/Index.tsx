@@ -22,11 +22,10 @@ const Index = () => {
     if (email) {
 
       try {
-        const response = await axios.post('https://pfldvbnga243udthe6wd4lfdum0qwxdc.lambda-url.us-east-2.on.aws', {
+        await axios.post('https://pfldvbnga243udthe6wd4lfdum0qwxdc.lambda-url.us-east-2.on.aws', {
           email: email
         });
-
-        console.log('Success:', response.data);
+        
         toast.success("You're on the list! We'll be in touch.");
         setEmail(''); // Clear input on success
       } catch (error) {
