@@ -46,20 +46,10 @@ const Index = () => {
         transition={{ duration: 0.8, ease: "easeOut" }}
         className="flex flex-col items-center gap-8 max-w-2xl text-center relative z-10"
       >
-        {/* Logo */}
-        <motion.img
-          src={logo}
-          alt="TrackToBuy logo"
-          className="w-24 h-24 invert brightness-200"
-          initial={{ scale: 0.8, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ delay: 0.2, duration: 0.6 }}
-        />
-
         {/* Headline */}
         <div>
           <p className="text-primary font-medium tracking-widest uppercase text-sm mb-3">
-            Coming Soon!
+            Track to Buy
           </p>
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-foreground leading-tight">
             Your wishlist,
