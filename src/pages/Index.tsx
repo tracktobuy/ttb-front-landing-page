@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/ttb-logo.svg";
 import { ShoppingCart, Link2, Database, Bell } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -46,10 +46,16 @@ const Index = () => {
         transition={{ duration: 0.8, ease: "easeOut" }}
         className="flex flex-col items-center gap-8 max-w-2xl text-center relative z-10"
       >
+        {/* Logo */}
+        <motion.img
+          src={logo}
+          alt="TrackToBuy logo"
+        />
+
         {/* Headline */}
         <div>
           <p className="text-primary font-medium tracking-widest uppercase text-sm mb-3">
-            Track to Buy
+            Coming soon!
           </p>
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-foreground leading-tight">
             Your wishlist,
