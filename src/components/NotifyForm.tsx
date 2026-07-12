@@ -5,13 +5,34 @@ import { useState, type FormEvent } from "react";
 export default function NotifyForm() {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "submitted">("idle");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     if (!email.trim()) return;
-    // No backend yet — this is a landing page. Wire this up to your
-    // waitlist/email provider once the signup service exists.
-    setStatus("submitted");
+
+    setIsSubmitting(true);
+
+    try {
+      const payload = { email };
+
+      const response = await fetch('https://rt0m7k6oki.execute-api.us-east-2.amazonaws.com/prod/ttb-subscription-service/v1//mail-subscriptions', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+            // 'Authorization': 'Bearer YOUR_TOKEN' // Add if your API requires it
+        },
+        body: JSON.stringify(payload),
+      });
+
+      if (response.ok) {
+        setStatus("submitted");
+      } else {
+        throw new Error(`Server returned code: ${response.status}`);
+      }
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   if (status === "submitted") {
@@ -50,9 +71,11 @@ export default function NotifyForm() {
       />
       <button
         type="submit"
-        className="shrink-0 rounded-xl bg-accent px-5 py-3.5 text-[14px] font-medium text-[rgb(9_10_12)] transition-opacity hover:opacity-90 active:opacity-80"
+        id="notify-submit"
+        disabled={isSubmitting}
+        className="shrink-0 cursor-pointer rounded-xl bg-accent px-5 py-3.5 text-[14px] font-medium text-[rgb(9_10_12)] transition-opacity hover:opacity-90 active:opacity-80 disabled:cursor-not-allowed disabled:opacity-70"
       >
-        Notify me
+        {isSubmitting ? "Submitting..." : "Notify me"}
       </button>
     </form>
   );
