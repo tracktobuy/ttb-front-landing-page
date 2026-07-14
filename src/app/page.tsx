@@ -27,7 +27,7 @@ export default function Home() {
         <header className="flex items-center justify-between py-7">
           <Logo />
           <span className="rounded-full border border-border-strong px-3 py-1.5 font-[family-name:var(--font-mono)] text-[12px] text-text-muted">
-            Coming soon OK?
+            Coming soon
           </span>
         </header>
 
