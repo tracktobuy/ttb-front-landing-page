@@ -108,7 +108,6 @@ export default function Home() {
           <p className="font-[family-name:var(--font-mono)] text-[12px] text-text-faint">
             © {new Date().getFullYear()} TrackToBuy. All rights reserved.
           </p>
-          <p>eita env value: {process.env.EITA}</p>
         </footer>
       </div>
 
