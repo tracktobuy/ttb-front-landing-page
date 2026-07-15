@@ -8,10 +8,15 @@ on:
 permissions:
   id-token: write
 
+env:
+  EITA: ${{ secrets.EITA }}
+
 jobs:
   # 1. BUILD JOB
   build:
     runs-on: ubuntu-latest
+    environment: development
+
     steps:
       - name: 'Checkout code'
         uses: actions/checkout@v4
