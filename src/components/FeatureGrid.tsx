@@ -60,25 +60,24 @@ const FEATURES: Feature[] = [
 
 export default function FeatureGrid() {
   return (
-    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+    <ul className="grid list-none grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4" aria-label="TrackToBuy features">
       {FEATURES.map((feature) => (
-        <div
-          key={feature.title}
-          className="group rounded-2xl border border-border bg-surface p-6 transition-colors duration-200 hover:border-accent-line"
-        >
-          <div className="mb-5 flex h-10 w-10 items-center justify-center rounded-lg bg-accent-dim transition-transform duration-200 group-hover:scale-105">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-              {feature.icon}
-            </svg>
-          </div>
-          <h3 className="font-[family-name:var(--font-display)] text-[16px] font-semibold text-text-primary">
-            {feature.title}
-          </h3>
-          <p className="mt-2 text-[14px] leading-relaxed text-text-muted">
-            {feature.description}
-          </p>
-        </div>
+        <li key={feature.title} className="group">
+          <article className="h-full rounded-2xl border border-border bg-surface p-6 transition-colors duration-200 hover:border-accent-line">
+            <div className="mb-5 flex h-10 w-10 items-center justify-center rounded-lg bg-accent-dim transition-transform duration-200 group-hover:scale-105">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                {feature.icon}
+              </svg>
+            </div>
+            <h3 className="font-[family-name:var(--font-display)] text-[16px] font-semibold text-text-primary">
+              {feature.title}
+            </h3>
+            <p className="mt-2 text-[14px] leading-relaxed text-text-muted">
+              {feature.description}
+            </p>
+          </article>
+        </li>
       ))}
-    </div>
+    </ul>
   );
 }
