@@ -12,6 +12,8 @@ jobs:
   # 1. BUILD JOB
   build:
     runs-on: ubuntu-latest
+    environment: production
+
     steps:
       - name: 'Checkout code'
         uses: actions/checkout@v4
@@ -25,6 +27,8 @@ jobs:
         run: npm install
     
       - name: 'Build project'
+        env:
+          GOOGLE_ANALYTICS_TAG: ${{ vars.GOOGLE_ANALYTICS_TAG }}
         run: npm run build
 
       - name: 'Upload build artifact'
