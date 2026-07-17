@@ -1,4 +1,5 @@
 import Logo from "@/components/Logo";
+import Link from "next/link";
 import PasteDemo from "@/components/PasteDemo";
 import NotifyForm from "@/components/NotifyForm";
 import FeatureGrid from "@/components/FeatureGrid";
@@ -30,12 +31,14 @@ export default function Home() {
         <header className="py-7" role="banner">
           <nav className="flex items-center justify-between" aria-label="Primary">
             <Logo />
-            <button
-              type="button"
+            <Link
+              href="https://app.tracktobuy.com"
+              target="_blank"
+              rel="noopener noreferrer"
               className="cursor-pointer rounded-full border border-border-strong bg-bg px-4 py-2 text-[12px] font-[family-name:var(--font-mono)] text-text-primary transition hover:border-text-primary hover:text-text-primary"
             >
               Sign In / Sign Up
-            </button>
+            </Link>
           </nav>
         </header>
 
